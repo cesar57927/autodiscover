@@ -39,4 +39,4 @@ class AutoDiscover:
         return list(path.glob('**/*.py'))
 
     def __normalize_module_name(self, module):
-        return '.'.join(module.parts).replace('.py', '')
+        return '.'.join(module.parts)[: -len(module.suffix)]
